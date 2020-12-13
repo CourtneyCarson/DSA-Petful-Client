@@ -1,7 +1,23 @@
-import './index.css'
+// import './index.css'
 
-import React from 'react'
-import ReactDOM from 'react-dom'
-import Root from './root/Root'
+// import React from 'react'
+// import ReactDOM from 'react-dom'
+// import App from './App'
 
-ReactDOM.render(<Root />, document.getElementById('root'))
+// ReactDOM.render(<App />, document.getElementById('app'))
+
+
+import React from 'react';
+import ReactDOM from 'react-dom';
+import {BrowserRouter as Router} from 'react-router-dom';
+import {AppContextProvider} from './contexts/AppContext'
+import './index.css';
+import App from './components/App/App';
+
+ReactDOM.render(
+  <Router>
+    <AppContextProvider>
+      <App />
+    </AppContextProvider>
+  </Router>
+, document.getElementById('root'));
