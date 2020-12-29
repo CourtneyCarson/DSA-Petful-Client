@@ -19,6 +19,7 @@ export default class PetInfo extends Component {
           <li>Gender: {animal.gender}</li>
           <li>Age: {animal.age}</li>
           <li>Breed: {animal.breed}</li>
+          <li>Description: {animal.description}</li>
         </ul>
         <button 
           type='button' 

@@ -121,7 +121,7 @@ class AdoptionPage extends Component {
     return (
       <div>
         <h1>
-          You're little buddy awaits
+          Your Fur Baby Awaits
         </h1>
         {this.context.queue ? this.renderLine() : 'Loading Pets! ...'}
 
