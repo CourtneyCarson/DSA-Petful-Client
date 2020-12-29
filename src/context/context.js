@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-const Context = React.createContext({
+const AppContext = React.createContext({
   users: [],
   queue: null,
   userName: '',
@@ -35,9 +35,9 @@ const Context = React.createContext({
   cycleList: () => { }
 });
 
-export default Context;
+export default AppContext;
 
-export class ContextProvider extends Component {
+export class AppContextProvider extends Component {
   state = {
     users: [],
     queue: null,
@@ -48,69 +48,75 @@ export class ContextProvider extends Component {
     error: null,
   };
   //set + clear user
-  setUser(users) {
-    this.setState({ users });
+  setUsers = (users) => {
+    this.setState({users})
   }
 
-  clearUsers() {
-    this.setState({ users: [] });
+  clearUsers = () => {
+    this.setState({users: []})
   }
   // set + clear queue of users
-  setQueue(queue) {
-    this.setState({ queue });
+
+  setQueue = (queue) => {
+    this.setState({queue})
   }
 
-  clearQueue() {
-    this.setState({ queue: null });
+  clearQueue = () => {
+    this.setState({queue: null})
   }
   // set username + clear
-  setUserName(userName) {
-    this.setState({ userName });
+  setUserName = (userName) => {
+    this.setState({userName})
   }
-  clearUserName() {
-    this.setState({ userName: '' });
+
+  clearUserName = () => {
+    this.setState({userName: ''})
   }
   //set cat top of queue 
-  setCurrentCat(currentCat) {
-    this.setState(currentCat);
+  setCurrentCat = (currentCat) => {
+    this.setState({currentCat})
   }
-  clearCurrentCat() {
-    this.setState({ currentCat: {} });
+
+  clearCurrentCat = () => {
+    this.setState({currentCat: {}})
   }
   //set dog top of queue
-  setCurrentDog(currentDog) {
-    this.setState({ currentDog });
+  setCurrentDog = (currentDog) => {
+    this.setState({currentDog})
   }
-  clearCurrentDog(currentDog) {
-    this.setState({ currentDog: {} });
+
+  clearCurrentDog = () => {
+    this.setState({currentDog: {}})
   }
   // set error
-  setError(error) {
-    console.log(error);
-    this.setState({ error });
+  setError = (error) => {
+    console.log(error)
+    this.setState({error})
   }
-  clearError() {
-    this.setState({ error: null });
+
+  clearError = () => {
+    this.setState({error: null})
   }
   //set + clear adopted
-  setAdopted(adopted) {
-    this.setState({ adopted: [...this.state.adopted] });
+  setAdopted = (adopted) => {
+    this.setState({adopted: [...this.state.adopted, adopted]})
   }
-  clearAdopted() {
-    this.setState({ adopted: [] });
+
+  clearAdopted = () => {
+    this.setState({adopted: []})
   }
   // random cat or dog top of queue
-  randomCatDog() {
-    let flipCoin = Math.floor(Math.random() * 100);
-    if (flipCoin < 50) {
-      this.handleAdoptDog();
+  randomCatDog = () => {
+    let coin = Math.floor(Math.random() * 100)
+    if(coin < 50){
+      this.handleAdoptCat()
     }
     else {
-      this.handleAdoptCat();
+      this.handleAdoptDog()
     }
   }
   //cycle list???? 
-  cycleList() {
+  cycleList = () => {
     if (this.context.userName !== this.context.queue.first.value) {
       setTimeout(function () {
         this.randomCatDog();
@@ -146,9 +152,9 @@ export class ContextProvider extends Component {
     };
 
     return (
-      <Context.Provider value={value}>
-      {this.props.children}
-      </Context.Provider>
+      <AppContext.Provider value={value}>
+        {this.props.children}
+      </AppContext.Provider>
     );
   }
 }

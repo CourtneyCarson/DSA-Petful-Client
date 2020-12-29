@@ -18,6 +18,7 @@ const UsersService = {
       ) 
   },
 
+
   getUsers() {
     return fetch(`${config.API_ENDPOINT}/users`, {
       method: 'GET',
