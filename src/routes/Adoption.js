@@ -51,7 +51,7 @@ class AdoptionPage extends Component {
   }
 
   renderLine() {
-    console.log(this.context.queue.first.value)
+    // console.log(this.context.queue.first.value)
 
     return (
       <Line
@@ -121,7 +121,7 @@ class AdoptionPage extends Component {
     return (
       <div>
         <h1>
-          Pick a lil buddy
+          You're little buddy awaits
         </h1>
         {this.context.queue ? this.renderLine() : 'Loading Pets! ...'}
 

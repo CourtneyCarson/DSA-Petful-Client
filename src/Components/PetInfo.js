@@ -16,7 +16,7 @@ export default class PetInfo extends Component {
         <h3>Name: {animal.name}</h3>
         <p>{animal.story}</p>
         <ul>
-          <li>Sex: {animal.sex}</li>
+          <li>Gender: {animal.gender}</li>
           <li>Age: {animal.age}</li>
           <li>Breed: {animal.breed}</li>
         </ul>
