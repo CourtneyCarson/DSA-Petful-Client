@@ -36,11 +36,11 @@ class LandingPage extends Component {
       <main className='landing-fullpage'>
         <div className='landing-page'>
           <h1> Welcome to Petful! </h1>
-          <h4> We match the first person in the queue to the first pet that arrived at the shelter so no pets are left behind. Add you name to the queue below to be matched with your new furry friend. </h4>
+          <h4> We match the first person in the queue to the first pet that arrived at the shelter so no pets are left behind. Add your name to the queue to be matched with your new furry friend. </h4>
           <img src='https://live.staticflickr.com/65535/50707103271_c9d1f629fc_w.jpg' alt='dog-cat-under-blanket'></img>
          
           <form className='get-started' onSubmit={this.handleSubmit}>
-            <h3>adopt today</h3>
+            <h3> Adopt Today </h3>
             <label htmlFor='name'> Name</label>
             <input type='text' name='name' id='name' required />
             <button type='submit'>Submit</button>
