@@ -7,8 +7,8 @@ export default class PetInfo extends Component {
 
     const {animal, handleAdoptClick} = this.props
     let isFirstInLine = false
-    if(this.context.lineQueue) {
-      isFirstInLine = (this.context.userName === this.context.lineQueue.first.value)
+    if(this.context.queue) {
+      isFirstInLine = (this.context.userName === this.context.queue.first.value)
     }
     return (
       <div className='PetInfo'>

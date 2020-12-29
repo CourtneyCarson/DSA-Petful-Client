@@ -9,7 +9,7 @@ const AppContext = React.createContext({
   adopted: [],
   error: null,
 
-  setUser: () => { },
+  setUsers: () => { },
   clearUsers: () => { },
 
   setQueue: () => { },

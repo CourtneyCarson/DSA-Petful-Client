@@ -7,7 +7,8 @@ class LandingPage extends Component {
   static contextType = AppContext;
 
   //user 
-  handleSubmit(event) {
+  // if using with an event listener use an arrow function - needs to bind and arrow auto binds it 
+  handleSubmit = (event) => {
     event.preventDefault();
     console.log(this.context.clearError());
     this.context.clearError();
@@ -20,11 +21,9 @@ class LandingPage extends Component {
     return UsersService.postUser(name)
       .then(results => {
 
-
         const { location, history } = this.props;
         const destination = (location.state || {}).from || '/adopt';
         history.push(destination);
-
 
       });
   }

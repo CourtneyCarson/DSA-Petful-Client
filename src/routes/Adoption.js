@@ -46,9 +46,9 @@ class AdoptionPage extends Component {
 
   
 
-  // componentWillUnmount() {
-  //   clearInterval(this.interval)
-  // }
+  componentWillUnmount() {
+    clearInterval(this.interval)
+  }
 
   renderLine() {
     console.log(this.context.queue.first.value)
@@ -111,7 +111,7 @@ class AdoptionPage extends Component {
     const petAdopted = this.context.adopted.map((animal, index) =>
       <div className='adopted' key={index}>
         <Adopted
-          imgSrc={animal.imageUrl}
+          imgSrc={animal.imageURL}
           name={animal.name}
           owner={animal.owner}
         />
