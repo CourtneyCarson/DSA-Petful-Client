@@ -80,8 +80,10 @@ class AdoptionPage extends Component {
       />
     );
   }
-
-  handleAdoptCat() {
+// arrow function makes context global instead of the context being a part of
+// in a constructor func the context would look directly to handleAdoptCat instead of to context. so must
+  // use an arrow function in this case. 
+  handleAdoptCat = () =>  {
     return CatsService.deleteCat()
       .then(res => {
         let owner = this.context.queue.requeue();
@@ -94,7 +96,7 @@ class AdoptionPage extends Component {
       });
   }
 
-  handleAdoptDog() {
+  handleAdoptDog = () =>  {
     return DogsService.deleteDog()
       .then(res => {
         let owner = this.context.queue.requeue();
